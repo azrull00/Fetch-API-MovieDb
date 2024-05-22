@@ -25,7 +25,7 @@ const app = () => {
   };
   const displayMovies = (movies) => {
     let moviesTemplate = `
-        <div class="row row-cols-3 row-cols-sm-1 row-cols-md-2 g-2 g-lg-3 g-sm-3">
+        <div class="row row-cols-1 row-cols-md-3 g-2 g-4">
         `;
     if (movies.length < 1) {
       displayAlert("Data tidak ditemukan");
