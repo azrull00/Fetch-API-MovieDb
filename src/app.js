@@ -2,7 +2,7 @@ import { baseUrl, apiToken, imageUrl } from "./config.js";
 
 const nowPlayingEndpoint = `${baseUrl}/movie/now_playing`;
 const searchMovieEndpoint = (query) => `${baseUrl}/search/movie?query=${query}`;
-const movieDetailEndpoint = (movieId) => `${baseUrl}/movie/${movieId}`;
+const movieDetailEndpoint = (movieId) => `${baseUrl}/movie/${movieId}?`;
 
 const fetchOptions = {
   method: "GET",
@@ -131,6 +131,7 @@ const app = () => {
     if (event.target.classList.contains("card-link")) {
         console.log(this.target);
       const movieId = event.target.dataset.id;
+      // memanggil fungsi untuk menampilkan detail
       displayMovieDetail(movieId);
     }
   });
@@ -145,6 +146,7 @@ const app = () => {
       const response = await fetch(movieDetailEndpoint(movieId), FetchMovieDetail);
       const movie = await response.json();
       console.log(movie);
+      console.log(movieId);
   
       // Destrukturisasi data film
       const {
