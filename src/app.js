@@ -158,6 +158,7 @@ const app = () => {
         status,
         genres,
         runtime,
+        tagline,
       } = movie;
   
       // Template HTML untuk detail film
@@ -168,6 +169,7 @@ const app = () => {
           </div>
           <div class="col-md-8">
             <h2>${title}</h2>
+            <p><strong>Tagline:</strong> ${tagline} </p>
             <p><strong>Tanggal Rilis:</strong> ${release_date}</p>
             <p><strong>Rating:</strong> ${vote_average} / 10</p>
             <p><strong>Genre : </strong> ${genres.map((genre) => genre.name).join(", ")}</p>          
