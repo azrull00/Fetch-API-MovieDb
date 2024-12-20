@@ -12,16 +12,16 @@ const fetchOptions = {
   },
 };
 
-const FetchMovieDetail = {
-  async: true,
-  crossDomain: true,
-  url: movieDetailEndpoint(),
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: `Bearer ${apiToken}`,
-  }
-};
+// const FetchMovieDetail = {
+//   async: true,
+//   crossDomain: true,
+//   url: movieDetailEndpoint(),
+//   method: 'GET',
+//   headers: {
+//     accept: 'application/json',
+//     Authorization: `Bearer ${apiToken}`,
+//   }
+// };
 
 
 const contentElm = document.querySelector("#content");
@@ -143,7 +143,7 @@ const app = () => {
     try {
 
       // Fetch data detail film berdasarkan movieId
-      const response = await fetch(movieDetailEndpoint(movieId), FetchMovieDetail);
+      const response = await fetch(movieDetailEndpoint(movieId),fetchOptions);
       const movie = await response.json();
       console.log(movie);
       console.log(movieId);
